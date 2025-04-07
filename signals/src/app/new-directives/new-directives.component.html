@@ -1,0 +1,21 @@
+<h2>Directives in Angular 17^</h2>
+
+@if (isAdmin) {
+
+    <h2>Admin Page</h2>
+}@else {
+    <h2>You need Admin Privilledges</h2>
+}
+
+
+
+<!-- Old approach-->
+<div *ngIf="isAdmin;then admin;else normal">You are The Admin</div>
+
+<ng-template #admin>
+    <h1>Admin Available</h1>
+</ng-template>
+
+<ng-template #normal>
+    <h1>Normal User Available</h1>
+</ng-template>
