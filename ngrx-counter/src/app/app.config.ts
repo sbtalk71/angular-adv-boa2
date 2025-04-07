@@ -3,8 +3,9 @@ import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
 import { provideStore } from '@ngrx/store';
-import { counterReducer } from './store/counter.reducers';
+import { counterReducer, doubleCounterReducer } from './store/counter.reducers';
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes), provideStore({counter:counterReducer})]
+  providers: [provideZoneChangeDetection({ eventCoalescing: true }), 
+    provideRouter(routes), provideStore({counter:counterReducer,doubleData:doubleCounterReducer})]
 };
