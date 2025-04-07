@@ -2,9 +2,9 @@
 
 @if (isAdmin) {
 
-    <h2>Admin Page</h2>
+<h2>Admin Page</h2>
 }@else {
-    <h2>You need Admin Privilledges</h2>
+<h2>You need Admin Privilledges</h2>
 }
 
 
@@ -19,3 +19,44 @@
 <ng-template #normal>
     <h1>Normal User Available</h1>
 </ng-template>
+
+<ul>
+    @for (user of users; track user.id) {
+
+    <li>{{user.id}} {{user.name}}</li>
+    }
+</ul>
+
+<h2>Switch Case Demo</h2>
+
+@switch (status) {
+
+@case ('loading') {
+<h2>Loading.....</h2>
+
+}
+@case ('success') {
+<h2>Data loaded successfully</h2>
+}
+@case ('error') {
+<h2>Error in loading..</h2>
+}
+@default {
+<h2>Status Not Known..</h2>
+}
+}
+
+@let totalPrice=items*price;
+<h2>{{totalPrice}}</h2>
+
+@defer (on timer(5s)) {
+<app-deferred></app-deferred>
+}@placeholder {
+<h2>Component will Load here</h2>
+}
+
+@defer (on hover) {
+    <app-deferred></app-deferred>
+    }@placeholder {
+    <h2>Component will Load here</h2>
+    }
