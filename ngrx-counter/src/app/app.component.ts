@@ -26,6 +26,7 @@ export class AppComponent {
   }
 
   doIncrement() {
+    
     this.store.dispatch(increment());
   }
 
