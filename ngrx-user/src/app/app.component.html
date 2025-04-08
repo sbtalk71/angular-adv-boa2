@@ -1,0 +1,11 @@
+
+Add User : <input type="text" #inputRef>
+<button (click)="addUserHandler(inputRef.value)">add user</button>
+
+<hr>
+<ul>
+@for(user of users$|async; track $index ){
+
+<li>{{user.name}}</li>
+}
+</ul>
