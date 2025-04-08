@@ -5,3 +5,5 @@ export const addUser=createAction(
     "[user] add User",
     props<User>()
 );
+
+export const removeUser=createAction('[user] remove user',props<{id:number}>());

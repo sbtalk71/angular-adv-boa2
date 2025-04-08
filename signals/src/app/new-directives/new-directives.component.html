@@ -20,12 +20,17 @@
     <h1>Normal User Available</h1>
 </ng-template>
 
-<ul>
+<!-- <ul>
     @for (user of users; track user.id) {
 
     <li>{{user.id}} {{user.name}}</li>
     }
+</ul> -->
+
+<ul>
+    <li *ngFor="let user of users; trackBy: trackById">{{user.name}}</li>
 </ul>
+<button (click)="addUsers()">update users</button>
 
 <h2>Switch Case Demo</h2>
 

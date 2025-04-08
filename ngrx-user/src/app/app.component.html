@@ -6,6 +6,9 @@ Add User : <input type="text" #inputRef>
 <ul>
 @for(user of users$|async; track $index ){
 
-<li>{{user.name}}</li>
+<li>
+  <span>{{user.name}}</span>
+  <button (click)="remove(user.id)">remove</button>
+</li>
 }
 </ul>

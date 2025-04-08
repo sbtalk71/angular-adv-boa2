@@ -4,7 +4,7 @@ import { User } from './user';
 import { Store } from '@ngrx/store';
 import { UserState } from './store/user.reducers';
 import { userArraySelector } from './store/user.selectors';
-import { addUser } from './store/user.actions';
+import { addUser, removeUser } from './store/user.actions';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -28,5 +28,9 @@ export class AppComponent {
     u.name=username;
 
     this.store.dispatch(addUser(u))
+  }
+
+  remove(uid:number){
+    this.store.dispatch(removeUser({id:uid}))
   }
 }
