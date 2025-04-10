@@ -1,0 +1,41 @@
+<h2>User Registration Form</h2>
+<hr>
+<div style="margin-left: 50px;">
+
+    <form [formGroup]="userForm">
+        <div>
+            <label>Name:
+                <input type="text" name="username" formControlName="username">
+                <small *ngIf="userForm.get('username')?.errors?.['required'] && userForm.get('username')?.touched" style="color: red;">name required</small>
+                <small *ngIf="userForm.get('username')?.errors?.['minlength']" style="color: red;">name must be more than 4 chars</small>
+                <small *ngIf="userForm.get('username')?.errors?.['forbiddenName']" style="color: red;">Name Not Allowed</small>
+            </label>
+        </div>
+        <div>
+            <label>Email:
+                <input type="text" name="email" formControlName="email">
+                <small *ngIf="userForm.get('email')?.errors?.['required'] && userForm.get('email')?.touched" style="color: red;">email required</small>
+                <small *ngIf="userForm.get('email')?.errors?.['email']" style="color: red;">invalid email</small>
+            </label>
+        </div>
+        <div>
+            <label>age:
+                <input type="text" name="age" formControlName="age">
+                <small *ngIf="userForm.get('age')?.errors?.['required'] && userForm.get('age')?.touched" style="color: red;">Age required</small>
+                <small *ngIf="userForm.get('age')?.errors?.['pattern']" style="color: red;">Invalid age</small>
+            </label>
+        </div>
+
+        <div>
+            <label>phone:
+                <input type="text" name="phone" formControlName="phone">
+            </label>
+
+        </div>
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+</div>
+
+<div>{{userForm.errors|json}}</div>
