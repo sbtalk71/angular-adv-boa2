@@ -14,7 +14,7 @@ export const routes: Routes = [
 
     {path:'login', component:LoginComponent},
     {path:'profile',component:ProfileComponent, canDeactivate:[UnsavedGuard]},
-    {path:'unathourized',component:UnauthorizedComponent},
+    {path:'unathorized',component:UnauthorizedComponent},
     {path: 'store',component:StoreComponent, resolve:{productsData:ProductResolver},canActivate:[authGuard]},
     {path:'admin',component:AdminComponent, canActivate:[authGuard]},
     {path:'admin2',redirectTo:()=>{
