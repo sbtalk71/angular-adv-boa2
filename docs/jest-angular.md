@@ -3,20 +3,20 @@
 ---
 
 
-1. ** Unistall Karma and Jasmine **
+1. **Unistall Karma and Jasmine**
 
 ```sh
 	npm uninstall karma karma-chrome-launcher karma-coverage karma-jasmine karma-jasmine-html-reporter @types/jasmine jasmine-core
 ```
 
-2. **Install Jest, its types, and presets for Angular and also *ts-node* **
+2. **Install Jest, its types, and presets for Angular and also *ts-node***
 	*ts-node is required to resd .ts files by Jest*
 	
 ```sh
 	npm i --save-dev jest @types/jest jest-preset-angular ts-node
 ```
 
-3. ** Create a `setup-jest.ts` file in your project’s root folder **
+3. **Create a `setup-jest.ts` file in your project’s root folder**
 
 	And add that single line of code in it:
 	//import 'jest-preset-angular/setup-jest'; //deprecated
@@ -29,7 +29,7 @@
 	 setupZoneTestEnv();
 ```
 
-4. ** Create a `jest.config.ts` file in your project’s root folder with the following command **
+4. **Create a `jest.config.ts` file in your project’s root folder with the following command**
 
 ```sh
 	npx jest — init
@@ -41,7 +41,7 @@
 	setupFilesAfterEnv: ['./setup-jest.ts']
 
 ```
-5. ** Update your `tsconfig.spec.json` file **
+5. **Update your `tsconfig.spec.json` file**
 
 	Your compilerOptions should look like this:
 ```ts
@@ -53,7 +53,7 @@
 	},
 ```
 
-6. ** Last step: Update *package.json* **
+6. **Last step: Update *package.json***
 
 	In the scripts section, replace the test entry with:
 ```ts
@@ -76,7 +76,7 @@
 	- click administration > security > user > administrator > Tokens > create Token
 	- copy the token and keep it safe
 
-2. ** At Angular application **
+2. **At Angular application**
 
 	- install sonar scanner
 	```sh
@@ -97,7 +97,7 @@
 	sonar.token=<your sonar token>
 	```
 
-3. ** Running Test and Sonar Scanner **
+3. **Running Test and Sonar Scanner**
 	- make sure your sonar server is Running
 	- run jest test  
 		` npm run test `
