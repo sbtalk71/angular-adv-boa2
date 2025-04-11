@@ -1,0 +1,13 @@
+.type1{
+    width: 50%;
+    height: 100%;
+    background-color: beige;
+    cursor: move;
+    justify-content: center;
+    align-content: center;
+    padding: 10px;
+    margin: 10px;
+    box-shadow: 5px;
+    display: flex;
+}
+

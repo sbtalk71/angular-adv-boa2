@@ -1,0 +1,10 @@
+
+<div cdkDrag>
+    Drag Me!
+</div>
+
+<div cdkDropList>
+@for (fruit of fruits; track $index) {
+<div cdkDrag>{{fruit}}</div>
+}
+</div>
